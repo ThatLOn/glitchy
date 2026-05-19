@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); font-family: 'Poppins', sans-serif; padding: 40px 20px; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .profile-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+        .profile-pic { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+        h1 { font-family: 'Poppins', sans-serif; color: rgb(255, 255, 255); text-shadow: -2px -2px 0 rgb(0, 0, 0), 2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0), 2px 2px 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 2px 0 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0); margin-bottom: 10px; font-size: 2.5em; }
+        h1 a { color: rgb(100, 200, 255); text-decoration: none; transition: all 0.3s; }
+        h1 a:hover { color: rgb(150, 220, 255); }
+        p { font-family: 'Poppins', sans-serif; color: rgb(220, 220, 220); text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0); line-height: 1.6; margin: 15px 0; }
+        h3 { font-family: 'Poppins', sans-serif; color: rgb(200, 220, 255); text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0); margin: 20px 0 12px 0; font-size: 1.3em; }
+        ol, ul { margin-left: 25px; margin-top: 10px; }
+        li { font-family: 'Poppins', sans-serif; color: rgb(190, 210, 220); text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0); margin: 8px 0; line-height: 1.5; }
+        a { color: rgb(100, 200, 255); text-decoration: none; transition: all 0.2s; }
+        a:hover { color: rgb(150, 220, 255); text-decoration: underline; }
+        .section { margin: 30px 0; padding: 20px 0; }
+        .toc-table { width: 100%; border-collapse: collapse; margin: 25px 0; border-radius: 8px; overflow: hidden; }
+        .toc-table td { padding: 16px 20px; border: 1px solid rgba(100, 150, 200, 0.3); background: rgba(20, 40, 80, 0.5); transition: all 0.3s; }
+        .toc-table td:hover { background: rgba(50, 100, 150, 0.6); }
+        .toc-table a { font-weight: 600; }
+        .music-toggle { position: fixed; top: 20px; right: 20px; padding: 10px 16px; background: rgba(100, 200, 255, 0.2); border: 1px solid rgba(100, 200, 255, 0.5); border-radius: 8px; color: rgb(100, 200, 255); cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; transition: all 0.3s; z-index: 1000; }
+        .music-toggle:hover { background: rgba(100, 200, 255, 0.4); border-color: rgb(100, 200, 255); }
+        .music-toggle.muted { background: rgba(220, 100, 100, 0.2); border-color: rgba(220, 100, 100, 0.5); color: rgb(220, 100, 100); }
+        .music-toggle.muted:hover { background: rgba(220, 100, 100, 0.4); border-color: rgb(220, 100, 100); }
+    </style>
+</head>
+<body>
+    <!-- Background music (hidden) -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.image2url.com/r2/default/audio/1779170568892-42eb28b5-5d80-4359-8b43-686d4dcb8033.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">� Mute Music</button>
+
+    <div class="container">
+        <div class="profile-header">
+            <img class="profile-pic" src="https://cdn.discordapp.com/avatars/764374875833368627/eebc40724a43a387795ad46e90bfd59d.png?size=256">
+            <h3>glitchy</h3>
+        </div>
+
+        <h1>About me</h1>
+        <h1><a href="https://discord.gg/BpTUaDKjqD">Join my roblox game discord server!</a></h1>
+        
+        <table class="toc-table">
+            <tr>
+                <td><a href="#why-like">Why i like doing these stuff</a></td>
+                <td><a href="#why-interest">Why it interests me</a></td>
+            </tr>
+        </table>
+        
+        <div class="section">
+            <p>I like creating software, or creating games in roblox, i learned how to produce trap, rage, all that type of music last year</p>
+            
+            <h3 id="why-like">Why i like doing these stuff</h3>
+            <ol>
+                <li>I enjoy creating stuff i like because it really brings out my creativity</li>
+                <li>Most of the time i leave this stuff and come back to it kinda like beginners high.</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <p>I recently started learning html (today 5/18/26) because we were doing star testing in english, and they had this password thing that masks your characters with bulletpoints for privacy with keep the same value, and i thought it was interesting how it worked, so i searched it up and i was greeted with this ai thing, and i did not understand any of it. But it really interested me and made me want to learn myself.</p>
+
+            <h3 id="why-interest">This is why it interested me</h3>
+            <ol>
+                <li>I thought it was really cool how you could make a website with just text, and it would be able to do so much stuff.</li>
+                <li>Learning a new programming language is something i havent done in awhile, and i searched up if lua is easier than html, and surprised myself because it said html was much easier, which it really is so far.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3>Social Links</h3>
+            <ul>
+                <li><a href="https://www.roblox.com/users/profile">Roblox</a></li>
+                <li><a href="https://www.youtube.com/@glitchy_dis">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        const toggleBtn = document.getElementById('musicToggle');
+        let isUnmuted = false;
+
+        if (audio) {
+            audio.volume = 0.3;
+        }
+
+        function toggleMusic() {
+            if (isUnmuted) {
+                audio.muted = true;
+                toggleBtn.textContent = '🔊 Unmute Music';
+                toggleBtn.classList.add('muted');
+                isUnmuted = false;
+            } else {
+                audio.muted = false;
+                audio.play();
+                toggleBtn.textContent = '🔇 Mute Music';
+                toggleBtn.classList.remove('muted');
+                isUnmuted = true;
+            }
+        }
+        
+        // Start playing on page load
+        window.addEventListener('load', () => {
+            audio.play();
+            isUnmuted = true;
+            toggleBtn.textContent = '🔇 Mute Music';
+            toggleBtn.classList.remove('muted');
+        });
+    </script>
+</body>
+</html>
